@@ -1,6 +1,6 @@
 //============================================================================
 // Name        : date.h
-// Author      : TODO: fill in name
+// Author      : Leigh Goetsch
 //============================================================================
 
 // TODO: add definitions and declarations so that date.cpp compiles
