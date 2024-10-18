@@ -7,7 +7,6 @@
 #ifndef APPOINTMENTS_H
 #define APPOINTMENTS_H
 
-#include <string.h>
 #include "date.h"
 
 // Appointment: store an appointment as a date and a description
@@ -17,7 +16,6 @@ public:
 
   // construct an appointment on 0/0/0 with an empty description
   Appointment() {
-    // TODO: add code here - IF NEEDED - to make sure the constructor works
     _date = Date(0, 0, 0);
   }
 
