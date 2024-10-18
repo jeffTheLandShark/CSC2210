@@ -45,7 +45,10 @@ string Date::to_string() const {
 }
 
 bool Date::earlier(Date d1, Date d2) {
-  return d1.year() < d2.year() ? true : d1.month() < d2.month() ? true : d1.day() < d2.day();
+  return d1.year() < d2.year() ||
+         (d1.year() == d2.year() &&
+          (d1.month() < d2.month() ||
+           (d1.month() == d2.month() && d1.day() < d2.day())));
 }
 
 // TODO: if useful to your design, add code to check for valid dates

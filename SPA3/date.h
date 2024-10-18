@@ -27,7 +27,7 @@ public:
   int year() const;
   std::string to_string() const;
 
-  bool earlier(Date d1, Date d2);
+  static bool earlier(Date d1, Date d2);
 
 private:
   int _month;
