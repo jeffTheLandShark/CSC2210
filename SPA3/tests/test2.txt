@@ -1,0 +1,6 @@
+5/13/2004:      someone's birthday
+4/31/2004: no such day
+2/29/2003: treated as a leap day
+2/30/1999: non-existent day in february
+1/1/1900: computers didn't exist yet
+12/31/3000: end of time
