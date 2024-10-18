@@ -25,25 +25,26 @@ Appointment::Appointment(Date date, std::string description) {
       trailing = description[description.length() - 1] == ' ';
     }
   }
-
   _date = date;
   _description = description;
 }
 
 void Schedule::add(Appointment new_appointment) {
-  int pos = 0;
-  while (pos < num_appointments && before(appointments[pos], new_appointment)) {
-    ++pos;
-  }
+  if (Date::valid_date(new_appointment.date())) {
+    int pos = 0;
+    while (pos < num_appointments && before(appointments[pos], new_appointment)) {
+      ++pos;
+    }
 
-  // do not change any of the rest of this method
-  for (int i = num_appointments; i > pos; --i)
-    appointments[i] = appointments[i - 1];
-  if (pos < num_appointments)
-    appointments[pos] = new_appointment;
-  else
-    appointments[num_appointments] = new_appointment;
-  ++num_appointments;
+    // do not change any of the rest of this method
+    for (int i = num_appointments; i > pos; --i)
+      appointments[i] = appointments[i - 1];
+    if (pos < num_appointments)
+      appointments[pos] = new_appointment;
+    else
+      appointments[num_appointments] = new_appointment;
+    ++num_appointments;
+  }
 }
 
 void Schedule::write_to_cout() const {

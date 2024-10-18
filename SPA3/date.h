@@ -28,6 +28,7 @@ public:
   std::string to_string() const;
 
   static bool earlier(Date d1, Date d2);
+  static bool valid_date(Date date);
 
 private:
   int _month;
