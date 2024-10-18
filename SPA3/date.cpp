@@ -9,6 +9,7 @@
 
 #include "date.h"
 
+#include <iomanip>
 #include <iostream>
 #include <sstream>
 using namespace std;
@@ -36,13 +37,9 @@ string Date::to_string() const {
   // ostringstreams provide an cout-like interface but store the results
   //   in a std:string instead of files; this convert data into a string
   ostringstream formatted;
-  if (_month < 10)
-    formatted << "0";
-  formatted << _month << "/";
-  if (_day < 10)
-    formatted << "0";
-  formatted << _day << "/" << _year;
-
+  formatted << std::setw(2) << std::setfill('0') << _month << "/";
+  formatted << std::setw(2) << std::setfill('0') << _day << "/";
+  formatted << std::setw(4) << std::setfill('0') << _year;
   return formatted.str();
 }
 
