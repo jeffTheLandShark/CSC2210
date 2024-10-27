@@ -87,7 +87,7 @@ void Car::celebrate() {
 void Car::display() { cout << 'c'; }
 
 void Taxi::check_can_move_from(int location) {
-    _can_move = road->spot_is_clear(location + 1)
+    _can_move = road->spot_is_clear(location + 1);
 }
 
 void Taxi::celebrate() {
@@ -96,8 +96,6 @@ void Taxi::celebrate() {
 
 void Taxi::display() { cout << 't'; }
 
-// TODO: add EighteenWheeler methods; its display prints an 8
-//    For its celebration, print "blaaaaat"
 
 void EighteenWheeler::check_can_move_from(int location) {
   _can_move = road->spot_is_clear(location + 1) && road->spot_is_clear(location + 2) && road->spot_is_clear(location + 3);

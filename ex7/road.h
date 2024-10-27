@@ -24,6 +24,8 @@ private:
 
 class Vehicle {
 public:
+  virtual ~Vehicle() = default;
+
   Vehicle(Road *road_on) : _can_move{false}, road{road_on} { }
   bool can_move() const { return _can_move; }
   void reset_move_state() { _can_move = false; }
