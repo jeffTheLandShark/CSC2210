@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.29)
-project(week5_ex)
+project(ex7)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(week7
-        bonus.cpp)
+add_executable(ex7
+        main.cpp road.cpp)
