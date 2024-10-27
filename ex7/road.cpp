@@ -17,10 +17,10 @@ Road::Road(string description) {
             spots[i] = new Car(this);
             break;
         case 't':
-            // TODO: create a Taxi for this spot
+            spots[i] = new Taxi(this);
             break;
         case '8':
-            // TODO: create an EighteenWheeler for this spot
+            spots[i] = new EighteenWheeler(this);
             break;
         default:
             cout << "Unrecognized road character: " << description[i] << endl;
@@ -68,9 +68,10 @@ int Road::steps_to_clear() const {
 }
 
 void Road::display() {
-    // TODO: write the loop printing a character for each
-    //       print - if spots[i] is null
-
+    for (int i = 0; i < length; ++i) {
+      if ( spots[i] )
+        spots[i]->display();
+    }
     cout << endl;
 }
 
@@ -86,7 +87,7 @@ void Car::celebrate() {
 void Car::display() { cout << 'c'; }
 
 void Taxi::check_can_move_from(int location) {
-    // TODO: write this - the taxi can move if the next spot is clear
+    _can_move = road->spot_is_clear(location + 1)
 }
 
 void Taxi::celebrate() {
@@ -97,3 +98,13 @@ void Taxi::display() { cout << 't'; }
 
 // TODO: add EighteenWheeler methods; its display prints an 8
 //    For its celebration, print "blaaaaat"
+
+void EighteenWheeler::check_can_move_from(int location) {
+  _can_move = road->spot_is_clear(location + 1) && road->spot_is_clear(location + 2) && road->spot_is_clear(location + 3);
+}
+
+void EighteenWheeler::celebrate() {
+  cout << "blaaaaat" << endl;
+}
+
+void EighteenWheeler::display() { cout << '8'; }
