@@ -71,6 +71,8 @@ void Road::display() {
     for (int i = 0; i < length; ++i) {
       if ( spots[i] )
         spots[i]->display();
+      else
+          cout << "-";
     }
     cout << endl;
 }
