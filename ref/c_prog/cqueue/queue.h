@@ -8,9 +8,14 @@ struct QNode;
 typedef struct {
   struct QNode *head;
   struct QNode **tail;
-  } Queue;
+} Queue;
 
-  void initQueue(Queue *queue);
-  void offer(Queue *queue, char * word);
-  char * poll(Queue *queue);
-  void clearQueue(Queue *queue);
+void initQueue(Queue *queue);
+
+void offer(Queue *queue, char *word);
+
+char *poll(Queue *queue);
+
+void clearQueue(Queue *queue);
+
+#endif
