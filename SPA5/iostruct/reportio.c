@@ -7,13 +7,18 @@
 
 void flag_large_differentials(const Event events[], int event_count) {
   int total = 0;
-  for(int i = 0; i < event_count; ++i) {
-    // TODO: add code processing the events; if the event is an output,
-    //       subtract from the total; if it's an input, add
-    //       On add, if the total is >= 1000 then report such as
-    //       "after consuming coffee at 8:20, intake exceeds output by 1050 ml"
-    //       You'll use printf with %s for strings, %d for ints
+  for (int i = 0; i < event_count; ++i) {
 
+    if (events[i].is_output) {
+      total -= events[i].mL;
+
+    } else {
+      total += events[i].mL;
+      if (total >= 1000) {
+        printf("after consuming %s at %s, intake exceeds output by %d ml\n",
+               events[i].item, events[i].time, total);
+      }
+    }
   }
   printf("the final fluid differential is %d ml\n", total);
 }
