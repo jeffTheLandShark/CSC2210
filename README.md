@@ -27,9 +27,11 @@ The files in this repository are organized into the following categories:
 ├── assessments/         # quizzes, exams, and other assessments
 ├── exercises/           # small programming exercises - homework
 ├── ref/                 # example code from class
-├── SPA1/                # Software Project Assignment 1
-├── SPA2/                # Software Project Assignment 2
-└── SPA3/                # Software Project Assignment 3
+├── SPA1/                # Fluid Intake Tracker
+├── SPA2/                # Wordle Helper
+├── SPA3/                # Appointment Scheduler
+├── SPA4/                # Wumpus Game
+└── SPA5/                # Fluid Intake Tracker (C)
 ```
 
 ### SPAs
@@ -40,6 +42,7 @@ The files in this repository are organized into the following categories:
 | SPA 2 | Implementing a "wordle helper" program that reads a dictionary file and finds words that match the user's input.            |
 | SPA 3 | Implementing a program to read appointments and print them out in sorted order where appointments are sorted by date.       |
 | SPA 4 | Implementing a spin on the classic text-based game "Hunt the Wumpus".                                                       |
+| SPA 5 | Implementing a C version of SPA 1.                                                                                          |
 
 
 ## Tools and Technologies
